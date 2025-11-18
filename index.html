@@ -1,83 +1,440 @@
----
-layout: home
-title: "Mercenary Chef"
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercenary Chef | Culinary Alchemist</title>
 
-<section class="hero">
-  <div class="hero-container">
-    <h1 class="hero-title">MERCENARY CHEF</h1>
-    <h2 class="hero-subtitle">Culinary Alchemist</h2>
-    <p class="hero-tagline">
-      For the independent with soulful intent—<br>
-      reviving the sacred, medicinal power of food.
-    </p>
-  </div>
-</section>
+    <style>
+        :root {
+            --gold: #f5c542;
+            --gold-deep: #c8981d;
+            --silver-blue: #b8c7ff;
+            --silver-blue-deep: #7c8ecf;
+            --bg-dark: #020305;
+        }
 
-<section class="bio">
-  <h2>About Chef Christian Briner</h2>
-  <p>
-    With over 30 years in the hospitality industry and 15 years as a freelance chef, Christian Briner crafts extraordinary culinary experiences in some of the world’s most remote and rugged environments...
-  </p>
-  <p>
-    Christian’s expertise also extends to the Caribbean and Pacific Coast, where he’s served as private yacht chef for elite clientele. A life lived abroad—in Brazil, Peru, Central America, Hawaii, and Alaska—has shaped his craft with a holistic approach rooted in cultural depth and natural connection. Raised in his grandmother’s catering kitchen, he forged a tireless work ethic and a reverence for hospitality that continues to define his culinary journey.
-  </p>
+        * {
+            box-sizing: border-box;
+        }
 
-  <figure>
-    <img src="/assets/images/chef-christian-briner-headshot.jpg" alt="Chef Christian Briner headshot" class="headshot" />
-    <figcaption>
-      <strong>Christian Briner</strong><br />
-      Mercenary Chef | Culinary Alchemist<br />
-      <em>Crafting wild cuisine in the world’s most remote corners.</em>
-    </figcaption>
-  </figure>
-</section>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top, #10131b 0%, #020305 55%, #000000 100%);
+            color: #e4e4e4;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-<section class="gallery">
-  <h2>Featured Dishes</h2>
+        a {
+            color: var(--silver-blue);
+            text-decoration: none;
+        }
 
-  <figure>
-    <img src="/assets/images/gastroduck-cherry-glace.jpg" alt="GastroDuck – Cherry Chambord Glace, Drunken Cherries, Duck Jus" />
-    <figcaption><strong>GastroDuck</strong> – Cherry Chambord Glace, Drunken Cherries, Duck Jus</figcaption>
-  </figure>
+        a:hover {
+            text-decoration: underline;
+        }
 
-  <figure>
-    <img src="/assets/images/zucchini-blossom-cold-smoked-oyster.jpg" alt="Zucchini Blossom, Cold Smoked Oyster, Citrus-Gruyere Panna Cotta" />
-    <figcaption><strong>Zucchini Blossom charming a Cold Smoked Oyster</strong><br />
-    Torrontés–Squid Ink Beurre Blanc, Citrus–Gruyère Panna Cotta, Bruschetta</figcaption>
-  </figure>
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 16px 60px;
+        }
 
-  <figure>
-    <img src="/assets/images/vodka-bacon-cured-sockeye-roe.jpg" alt="Vodka and Bacon Cured Sockeye Roe" />
-    <figcaption><strong>Vodka & Bacon Cured Sockeye Roe</strong></figcaption>
-  </figure>
+        /* HERO / LOGO AREA */
 
-  <figure>
-    <img src="/assets/images/umeshu-cordovan-oyster-uni-tobiko-ikura.jpg" alt="Umeshu poached Cordovan Oyster with Urchin, Tobiko, Ikura, and Wakame" />
-    <figcaption><strong>Umeshu Poached Cordovan Oyster</strong><br />
-    With Urchin, Black Tobiko, House Ikura & Goma Wakame</figcaption>
-  </figure>
+        .hero {
+            text-align: center;
+            padding: 20px 10px 10px;
+            position: relative;
+        }
 
-  <figure>
-    <img src="/assets/images/classic-tiramisu.jpg" alt="Classic Italian Tiramisu" />
-    <figcaption><strong>Classic Tiramisu</strong></figcaption>
-  </figure>
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at top, rgba(255,255,255,0.07) 0%, transparent 55%),
+                radial-gradient(circle at bottom, rgba(0,0,0,0.9) 0%, transparent 70%);
+            mix-blend-mode: screen;
+            opacity: 0.7;
+        }
 
-  <figure>
-    <img src="/assets/images/duck-confit-roulade-peach-foie-gras.jpg" alt="Duck Confit Roulade with Foie Gras Peach Coulis and Pistachio-Anchovy Pesto" />
-    <figcaption><strong>Roulades of Duck Confit</strong><br />
-    Foie Gras–Infused White Peach Coulis, Champagne Grapes, Pistachio–Anchovy Pesto</figcaption>
-  </figure>
+        .logo-glow {
+            position: relative;
+            display: inline-block;
+        }
 
-  <figure>
-    <img src="/assets/images/magret-de-canard-foie-gras-sous-vide.jpg" alt="Magret de Canard slathered in Foie Gras, prepared for Sous Vide" />
-    <figcaption><strong>Rendered Magrets de Canard</strong><br />
-    Slathered in Foie Gras, prepared for Sous Vide</figcaption>
-  </figure>
+        .logo-glow::before {
+            content: "";
+            position: absolute;
+            inset: -18px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(184,199,255,0.3) 0%, transparent 60%);
+            filter: blur(5px);
+            opacity: 0.9;
+            animation: pulseGlow 3.5s ease-in-out infinite;
+            z-index: 0;
+        }
 
-  <figure>
-    <img src="/assets/images/chef-christian-briner-in-action.jpg" alt="Chef Christian Briner commanding the flame" />
-    <figcaption><strong>Chef Christian Briner</strong><br />
-    Commanding fire, focused in the flow — Mercenary Chef in motion</figcaption>
-  </figure>
-</section>
+        @keyframes pulseGlow {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.06); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+
+        .logo {
+            width: 320px;
+            max-width: 80vw;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            margin: 16px 0 6px;
+            font-size: 2.1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-shadow:
+                0 0 8px rgba(0,0,0,0.9),
+                0 0 16px rgba(0,0,0,0.8);
+        }
+
+        .tagline {
+            font-size: 1.05rem;
+            color: var(--silver-blue);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .tagline span {
+            display: inline-block;
+            padding: 2px 6px;
+        }
+
+        .tagline-underline {
+            width: 210px;
+            max-width: 70%;
+            height: 2px;
+            margin: 0.4rem auto 0;
+            background: linear-gradient(
+                to right,
+                transparent,
+                var(--silver-blue),
+                var(--gold),
+                var(--silver-blue),
+                transparent
+            );
+            box-shadow: 0 0 9px rgba(248,212,105,0.7);
+        }
+
+        .construction-banner {
+            margin: 24px auto 30px;
+            max-width: 420px;
+            border-radius: 10px;
+            padding: 12px 18px;
+            border: 1px solid rgba(245,197,66,0.6);
+            background: linear-gradient(135deg, rgba(34,27,7,0.8), rgba(16,12,3,0.95));
+            box-shadow:
+                0 0 20px rgba(0,0,0,0.7),
+                0 0 14px rgba(224,178,72,0.3);
+            color: #fbe3a1;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-size: 0.95rem;
+        }
+
+        /* MAIN CONTENT LAYOUT */
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel {
+            background: rgba(3,5,10,0.92);
+            border-radius: 12px;
+            padding: 18px 18px 22px;
+            border: 1px solid rgba(120,120,120,0.35);
+            box-shadow: 0 0 18px rgba(0,0,0,0.7);
+        }
+
+        .panel h2 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--gold);
+            border-bottom: 1px solid rgba(94,84,34,0.8);
+            padding-bottom: 6px;
+        }
+
+        .contact-text p {
+            margin: 8px 0;
+            font-size: 0.99rem;
+            color: #d9d9d9;
+        }
+
+        .label {
+            color: var(--silver-blue);
+        }
+
+        /* FORM */
+
+        .form-note {
+            font-size: 0.85rem;
+            color: #9aa0b9;
+            margin-bottom: 8px;
+        }
+
+        form {
+            margin-top: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px 11px;
+            margin: 7px 0 3px;
+            border-radius: 7px;
+            border: 1px solid #333847;
+            background: radial-gradient(circle at top left, #161927 0%, #06070c 60%);
+            color: #f0f0f0;
+            font-size: 0.97rem;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--silver-blue);
+            box-shadow: 0 0 8px rgba(184,199,255,0.6);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 11px 26px;
+            border-radius: 30px;
+            border: none;
+            font-size: 0.98rem;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+            color: #1b1306;
+            cursor: pointer;
+            box-shadow:
+                0 4px 10px rgba(0,0,0,0.8),
+                0 0 10px rgba(230,187,90,0.8);
+            transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow:
+                0 6px 14px rgba(0,0,0,0.9),
+                0 0 14px rgba(230,187,90,0.95);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow:
+                0 3px 7px rgba(0,0,0,0.9),
+                0 0 10px rgba(230,187,90,0.7);
+        }
+
+        /* GALLERY */
+
+        .gallery-section {
+            margin-top: 40px;
+            background: rgba(3,5,10,0.9);
+            border-radius: 12px;
+            padding: 20px 14px 24px;
+            border: 1px solid rgba(79,85,111,0.7);
+            box-shadow: 0 0 18px rgba(0,0,0,0.8);
+        }
+
+        .gallery-section h2 {
+            margin: 0 0 10px;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--silver-blue);
+        }
+
+        .gallery-section p {
+            margin: 0 0 14px;
+            font-size: 0.86rem;
+            color: #a0a6c2;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 10px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #33374b;
+            cursor: pointer;
+            background: #05060a;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+            opacity: 0.92;
+        }
+
+        .gallery-item::after {
+            content: "VIEW";
+            position: absolute;
+            right: 6px;
+            bottom: 4px;
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            padding: 2px 6px;
+            border-radius: 12px;
+            background: rgba(0,0,0,0.7);
+            color: var(--silver-blue);
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            font-size: 0.82rem;
+            color: #757b97;
+            margin-top: 26px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="logo-glow">
+            <img src="/assets/images/mercenary_chef_logo.png" alt="Mercenary Chef Logo" class="logo">
+        </div>
+
+        <h1>MERCENARY CHEF</h1>
+        <div class="tagline">
+            <span>CULINARY ALCHEMIST · UNBOUND CUISINE · PRECISION CRAFT · WILD SOUL</span>
+        </div>
+        <div class="tagline-underline"></div>
+
+        <div class="construction-banner">
+            SITE UNDER CONSTRUCTION · BOOKINGS & INQUIRIES WELCOME
+        </div>
+    </section>
+
+    <!-- MAIN GRID: CONTACT + FORM -->
+    <section class="main-grid">
+
+        <!-- CONTACT / BLURB -->
+        <div class="panel">
+            <h2>Contact & Signal</h2>
+            <div class="contact-text">
+                <p><strong>Chef Christian Briner</strong></p>
+                <p class="label">Cell / WhatsApp</p>
+                <p>808-319-9655</p>
+
+                <p class="label">Primary Email</p>
+                <p><a href="mailto:Mercenary.Chef@zohomail.com">Mercenary.Chef@zohomail.com</a></p>
+
+                <p class="label">Backup Email</p>
+                <p><a href="mailto:Esculent.Alchemy@proton.me">Esculent.Alchemy@proton.me</a></p>
+
+                <p style="margin-top: 14px; font-size: 0.9rem; color:#b9bed8;">
+                    Remote private chef services · expedition & lodge cuisine · bespoke menu design ·
+                    consulting for off-grid and high-end operations.
+                </p>
+            </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="panel">
+            <h2>Book the Mercenary</h2>
+            <p class="form-note">
+                Drop your email and a few details. I’ll follow up personally about dates, location,
+                scope, and dietary needs.
+            </p>
+
+            <!-- IMPORTANT: replace action URL with your own Formspree endpoint -->
+            <form action="https://formspree.io/f/your-form-id-here" method="POST">
+                <label for="email" class="label">Email</label>
+                <input id="email" type="email" name="email" required placeholder="you@example.com">
+
+                <label for="name" class="label">Name</label>
+                <input id="name" type="text" name="name" placeholder="Your name">
+
+                <label for="message" class="label">Message</label>
+                <textarea id="message" name="message" placeholder="Event dates, location, guest count, notes..."></textarea>
+
+                <button type="submit">Send Transmission</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+        <h2>Field Rations & Alchemy</h2>
+        <p>
+            A small taste of the work. More dishes, action shots, and expedition spreads will be added as the site evolves.
+        </p>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="/assets/images/gallery/sample1.jpg" alt="Mercenary Chef dish 1">
+            </div>
+
+            <div class="gallery-item">
+                <img src="/assets/images/gallery/sample2.jpg" alt="Mercenary Chef dish 2">
+            </div>
+
+            <div class="gallery-item">
+                <img src="/assets/images/gallery/sample3.jpg" alt="Mercenary Chef dish 3">
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        © 2025 Mercenary Chef · Culinary Alchemist · All Rights Reserved
+    </footer>
+
+</div>
+
+</body>
+</html>
